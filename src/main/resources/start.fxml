@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TabPane prefHeight="250.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="数据处理">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="460.0">
+                     <children>
+                        <Label fx:id="pricePathText" layoutX="31.0" layoutY="31.0" prefHeight="21.0" prefWidth="107.0" text="快递价目表路径：" />
+                        <TextField fx:id="pricePath" editable="false" layoutX="130.0" layoutY="30.0" prefHeight="23.0" prefWidth="190.0" />
+                        <Button fx:id="priceLocationPicker" layoutX="341.0" layoutY="30.0" mnemonicParsing="false" onAction="#pickPricePath" text="..." />
+                        <Label fx:id="dataPathText" layoutX="31.0" layoutY="73.0" text="运货单表路径：" />
+                        <TextField fx:id="dataPath" editable="false" layoutX="130.0" layoutY="69.0" prefHeight="23.0" prefWidth="190.0" />
+                        <Button fx:id="dataLocationPicker" layoutX="341.0" layoutY="69.0" mnemonicParsing="false" onAction="#pickDataPath" text="..." />
+                        <Button fx:id="run" layoutX="130.0" layoutY="183.0" mnemonicParsing="false" onAction="#execute" prefHeight="23.0" prefWidth="70.0" text="处理" />
+                        <Button fx:id="close" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" onAction="#closeProgram" prefHeight="23.0" prefWidth="63.0" text="关闭" />
+                        <Label fx:id="itemCountLabel" layoutX="31.0" layoutY="111.0" text="处理条目数量：" />
+                        <TextField fx:id="itemCount" layoutX="130.0" layoutY="107.0" prefHeight="23.0" prefWidth="190.0" />
+                        <Button fx:id="detectItem" layoutX="341.0" layoutY="107.0" mnemonicParsing="false" onAction="#detectItemCount" text="自动检测" />
+                        <CheckBox fx:id="isWinter" layoutX="155.0" layoutY="150.0" mnemonicParsing="false" text="套用冬季邮政收费标准" />
+                        <Label layoutX="418.0" layoutY="200.0" text="v1.1" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="规则设置">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="ruleList" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="163.0" prefWidth="423.0" />
+                        <Button fx:id="deleteRule" layoutX="299.0" layoutY="184.0" mnemonicParsing="false" text="删除规则" />
+                        <Button fx:id="modifyRule" layoutX="372.0" layoutY="184.0" mnemonicParsing="false" text="修改规则" />
+                        <Button fx:id="addRule" layoutX="226.0" layoutY="184.0" mnemonicParsing="false" text="添加规则" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
